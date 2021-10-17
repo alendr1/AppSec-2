@@ -13,7 +13,7 @@ task of cleaning up their mess falls to you.
 The project Shoddycorp's Cut-Rate Contracting was hired to create a 
 web site that facilitated the sale, gifting, and use of gift cards.
 They seemed to have delivered on *most* of the bare funcitonality of
-the project, but the code is not in good shape. Luckily Kevin Gallagher
+the project, but the code is not in good shape. Luckily John Ryan Allen
 (KG) has read through the code already and left some comments around
 some of the lines that concern him most. Comments not prefaced by KG were
 likely left by the original author. Like with all of Shoddycorp's
@@ -22,7 +22,7 @@ mimic in any way.
 
 ## Part 0: Setting up Your Environment
 
-In order to complete this assignment you will need the git VCS, Travis, 
+In order to complete this assignment you will need the git VCS, GitHub Actions, 
 python 3 and the Django web framework. You can install Django using the 
 following command:
 
@@ -46,7 +46,7 @@ continue to follow git best practices.
 
 When you are ready to begin the project, please create a repository 
 on GitHub for your second assignment. Like before, be sure to make 
-the repository **private**. Create a travis.yml file, which you will 
+the repository **private**. Create a GitHub Actions file, which you will 
 use to test your program later.
 
 
@@ -111,7 +111,7 @@ and verify that the attacks no long succeed on your site. You are
 allowed to use django plugins and other libraries to fix these 
 vulnerabilities. To make sure that these bugs don't come up again as
 the code evolves, write some test cases for django that test for 
-these vulnerabilites. Then have Travis run these tests with each push.
+these vulnerabilites. Then have GitHub Actions run these tests with each push.
 
 When you are finished with this section, please mark your part 1 
 submission by tagging the desired commit with the tag "part_1_complete"
@@ -150,10 +150,17 @@ Total points: 100
 
 Part 1 is worth 65 points:
 
-* 25 points for your attack cases
-* 15 points for all fixes
-* 10 points for the bug writeup
-* 10 points for Travis regression testing
+* 24 points for your attack cases
+  * 6 points for each attack identified and verified
+* 16 points for all fixes
+   * 4 points per fix
+
+* 12 points for the bug writeup
+   * 3 points for each well-written bug narrative
+      * 1.5 points for a well-written bug identification and exploitation narrative
+      * 1.5 points for a well-written explanation of the remediation action
+* 08 points for GitHub Actions regression testing
+   * 2 points for each coded (ideally Python) GitHub Action file that confirms the attack case is invalidated by the remediation action
 * 05 points for signed git commits.
 
 Part 2 is worth 35 points:
@@ -161,6 +168,10 @@ Part 2 is worth 35 points:
 * 10 points for encrypted database models
 * 10 points for proper key management
 * 15 points for your writeup.
+   * encryption_explanation.txt
+      * 7.5 points for a well-written, detailed, and technically accurate explanation of your database encryption decisions and implementation(s)
+      * 7.5 points for a well-written, detailed, and technically accurate explanation of your database key management decisions and implementation(s)
+
 
 ## What to Submit
 
@@ -168,17 +179,22 @@ On NYU Classes, submit a link to your GitHub repository. The repository
 should be **private**, and you should add the instructor/TA's GitHub
 account as a contributor to give them access for grading.
 
-For this section, your instructor is: Kevin Gallagher, GitHub ID `kcg295`.
+For this section, your instructors are:
+* John Ryan Allen, GitHub ID `NYUJRA`.
+* Abhijit Chitnis, GitHub ID `achitnis007`.
 
-For this section, your TA is Evan Richter, GitHub ID `evanrichter`.
+For this section, your TAs are:
+* Jess Ayala, GitHub ID `jayala-29`.
+* Geetha D, GitHub ID `dgeeth9595`.
+* Harsh Patel, GitHub ID `harshsorra`.
 
 The repository should contain:
 
 * Part 1
-  * Your .travis.yml
+  * Your GitHub Actions file
   * At least one signed commit
   * A directory named `part1` that contains your attack cases.
-  * An updated .travis.yml that runs your tests.
+  * An updated GitHub Actions file that runs your tests.
   * A commit with the fixed version of the code (if you like, this
     commit can also contain the files mentioned above) tagged as
     part_1_complete.
