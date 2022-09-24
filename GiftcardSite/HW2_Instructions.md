@@ -225,4 +225,4 @@ over. When this is released, compare it to the code you have and see what
 the differences are, and how much simpler things could be if standard
 solutions were used. We suspect that the cleanly written version will be
 relatively bug-free, but you are encouraged to try to attack it and
-prove us wrong!
+prove us wrong!!!!
