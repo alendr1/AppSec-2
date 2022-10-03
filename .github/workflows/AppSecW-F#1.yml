@@ -1,0 +1,23 @@
+name: Assign#1-W-F#1
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build
+      run: gcc -o giftcardreader giftcardreader.c 
+    - name: Crash 1 on Gift Card Reader 
+      run: ./giftcardreader 1 ./tests/crash1.gft
+    - name: Crash 2 on Gift Card Reader 
+      run: ./giftcardreader 1 ./tests/crash2.gft 
+    - name: Hang attack on Gift Card Reader make distcheck
+      run: ./giftcardreader 1 ./tests/hang.gft 
